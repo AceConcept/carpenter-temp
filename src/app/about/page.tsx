@@ -4,9 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-export default function AboutPage() {
-  const [isOpen, setIsOpen] = React.useState(false);
-
+export default function About() {
   const features = [
     { 
       title: 'Expert Craftsmanship', 

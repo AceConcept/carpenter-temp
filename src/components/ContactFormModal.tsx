@@ -31,6 +31,9 @@ export default function ContactFormModal({ isOpen, onClose }: ContactFormModalPr
           <p className="font-['Inter'] text-[16px] leading-[19px] font-normal tracking-[-0.16px] font-black">
             Let's get this conversation started. Tell us a bit about yourself, and we'll get in touch as soon as we can.
           </p>
+          <p className="text-gray-600 mb-6">
+            We&apos;ll get back to you within 24 hours. Can&apos;t wait? Call us now!
+          </p>
         </div>
 
         <form className="space-y-4">

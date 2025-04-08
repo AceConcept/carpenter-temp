@@ -38,7 +38,7 @@ export default function Testimonials() {
         {/* Testimonial Content */}
         <div className="testimonials__content w-full lg:w-[717px] h-[448px] mx-auto flex flex-col justify-center px-4 lg:px-0">
           <div className="testimonials__quote text-[24px] lg:text-[32px] font-normal tracking-[-0.64px] leading-[120%] font-black mb-8">
-            "{testimonials[currentSlide].quote}"
+            &ldquo;{testimonials[currentSlide].quote}&rdquo;
           </div>
           <div className="testimonials__author">
             <div className="testimonials__author-name text-[18px] lg:text-[20px] font-normal font-black mb-1">
