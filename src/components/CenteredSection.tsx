@@ -36,9 +36,9 @@ export default function CenteredSection() {
                 className="w-full h-full object-cover rounded-[16px]"
               />
             </div>
-            <h3 className="text-[16px] font-semibold pb-2">Title</h3>
+            <h3 className="text-[16px] font-semibold pb-2">Transform Your Kitchen into the Heart of Your Home</h3>
             <p className="font-sm-rg">
-              Expert carpenters solve home problems fast—delivering quality repairs at a fair price with precision craftsmanship, reliable service, and lasting results you can trust.
+              Whether you're dreaming of a modern culinary space or a cozy, classic kitchen, our expert remodeling team brings your vision to life. We specialize in complete kitchen makeovers that enhance both beauty and functionality.
             </p>
           </div>
 
@@ -53,9 +53,9 @@ export default function CenteredSection() {
                 className="w-full h-full object-cover rounded-[16px]"
               />
             </div>
-            <h3 className="text-[16px] font-semibold pb-2">Title</h3>
+            <h3 className="text-[16px] font-semibold pb-2">Refresh, Renew, and Reimagine Your Bathroom</h3>
             <p className="font-sm-rg">
-              Expert carpenters solve home problems fast—delivering quality repairs at a fair price with precision craftsmanship, reliable service, and lasting results you can trust.
+              Turn your bathroom into a stylish and serene retreat with our expert remodeling services. Whether you're updating a small powder room or creating a spa-like master bath, we handle every detail with precision and care.
             </p>
           </div>
 
@@ -70,9 +70,9 @@ export default function CenteredSection() {
                 className="w-full h-full object-cover rounded-[16px]"
               />
             </div>
-            <h3 className="text-[16px] font-semibold pb-2">Title</h3>
+            <h3 className="text-[16px] font-semibold pb-2">Bring Your Ideas to Life with Custom Carpentry</h3>
             <p className="font-sm-rg">
-              Expert carpenters solve home problems fast—delivering quality repairs at a fair price with precision craftsmanship, reliable service, and lasting results you can trust.
+              From one-of-a-kind furniture pieces to tailored built-ins and trim work, our custom carpentry services are designed to add beauty, functionality, and personality to your home. If you can dream it, we can build it—crafted with care, built to last.
             </p>
           </div>
         </div>

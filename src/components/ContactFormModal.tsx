@@ -10,7 +10,7 @@ export default function ContactFormModal({ isOpen, onClose }: ContactFormModalPr
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-white rounded-[32px] p-8 w-[90vw] max-w-[500px] relative">
+      <div className="bg-white rounded-[32px] p-8 w-[90vw] max-w-[500px] max-h-[90vh] overflow-y-auto relative">
         <button 
           onClick={onClose}
           className="absolute top-6 right-6 text-gray-500 hover:text-gray-700"
@@ -22,9 +22,6 @@ export default function ContactFormModal({ isOpen, onClose }: ContactFormModalPr
         </button>
 
         <div className="text-center mb-6">
-          <h3 className="text-[14px] font-normal tracking-[-0.18%] font-black uppercase mb-2">
-            OUR SERVICES
-          </h3>
           <h2 className="text-[32px] font-normal tracking-[-0.8px] leading-[120%] font-black mb-4">
             Contact Sales
           </h2>

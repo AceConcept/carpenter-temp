@@ -1,10 +1,12 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import ContactFormModal from '@/components/ContactFormModal';
 
 export default function About() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const features = [
     { 
       title: 'Expert Craftsmanship', 
@@ -71,73 +73,80 @@ export default function About() {
   ];
 
   return (
-    <main>
-      {/* Hero Section */}
-      <section className="w-full pt-[140px] pb-[88px]">
-        <div className="mx-auto w-[85vw] xl:w-[1126px]">
-          <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between">
-            {/* Image Section */}
-            <div className="w-full lg:w-[540px] aspect-[540/436] mb-8 lg:mb-0 order-1">
-              <Image
-                src="/images/Serene Minimalist Interior.jpeg"
-                alt="Serene Minimalist Interior"
-                width={540}
-                height={436}
-                className="w-full h-full object-cover rounded-[16px]"
-              />
-            </div>
+    <>
+      <main>
+        {/* Hero Section */}
+        <section className="w-full pt-[140px] pb-[88px]">
+          <div className="mx-auto w-[85vw] xl:w-[1126px]">
+            <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between">
+              {/* Image Section */}
+              <div className="w-full lg:w-[540px] aspect-[540/436] mb-8 lg:mb-0 order-1">
+                <Image
+                  src="/images/Serene Minimalist Interior.jpeg"
+                  alt="Serene Minimalist Interior"
+                  width={540}
+                  height={436}
+                  className="w-full h-full object-cover rounded-[16px]"
+                />
+              </div>
 
-            {/* Content Section */}
-            <div className="w-full lg:w-[500px] order-2 flex flex-col justify-center">
-              {/* Heading */}
-              <h1 className="text-[53px] font-normal tracking-[-1.82px] leading-[120%] font-black pb-6">
-                About<br />Us
-              </h1>
+              {/* Content Section */}
+              <div className="w-full lg:w-[500px] order-2 flex flex-col justify-center">
+                {/* Heading */}
+                <h1 className="text-[53px] font-normal tracking-[-1.82px] leading-[120%] font-black pb-6">
+                  About<br />Us
+                </h1>
 
-              {/* Description */}
-              <p className="font-inter text-[16px] font-normal tracking-[-0.16px] font-black pb-10">
-                Expert carpenters transform your home with precision craftsmanship—delivering quality renovations 
-                that combine style and functionality for lasting results you can trust.
-              </p>
+                {/* Description */}
+                <p className="font-inter text-[16px] font-normal tracking-[-0.16px] font-black pb-10">
+                  Expert carpenters transform your home with precision craftsmanship—delivering quality renovations 
+                  that combine style and functionality for lasting results you can trust.
+                </p>
 
-              {/* Action Buttons */}
-              <div className="flex gap-4">
-                <Link 
-                  href="/quote" 
-                  className="inline-flex items-center px-6 py-3 bg-[#C2B280] text-white rounded-full hover:bg-opacity-90 transition-colors duration-200 font-['Inter']"
-                >
-                  Request a Quote
-                </Link>
-                <Link 
-                  href="tel:989-700-0000" 
-                  className="inline-flex items-center px-6 py-3 bg-[#C2B280] text-white rounded-full hover:bg-opacity-90 transition-colors duration-200 font-['Inter']"
-                >
-                  Call 989-700-0000
-                </Link>
+                {/* Action Buttons */}
+                <div className="flex gap-4">
+                  <button 
+                    onClick={() => setIsModalOpen(true)}
+                    className="inline-flex items-center px-6 py-3 bg-[#C2B280] text-white rounded-full hover:bg-opacity-90 transition-colors duration-200 font-['Inter']"
+                  >
+                    Request a Quote
+                  </button>
+                  <Link 
+                    href="tel:989-700-0000" 
+                    className="inline-flex items-center px-6 py-3 bg-[#C2B280] text-white rounded-full hover:bg-opacity-90 transition-colors duration-200 font-['Inter']"
+                  >
+                    Call 989-700-0000
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Features Section */}
-      <section className="w-full pt-[88px] pb-[176px]">
-        <div className="mx-auto w-[85vw] xl:w-[1126px]">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <div key={index} className="flex gap-4">
-                <div className="flex-shrink-0 mt-1">
-                  {feature.icon}
+        {/* Features Section */}
+        <section className="w-full pt-[88px] pb-[176px]">
+          <div className="mx-auto w-[85vw] xl:w-[1126px]">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {features.map((feature, index) => (
+                <div key={index} className="flex gap-4">
+                  <div className="flex-shrink-0 mt-1">
+                    {feature.icon}
+                  </div>
+                  <div>
+                    <h3 className="font-sm-sb mb-2">{feature.title}</h3>
+                    <p className="font-sm-rg">{feature.description}</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="font-sm-sb mb-2">{feature.title}</h3>
-                  <p className="font-sm-rg">{feature.description}</p>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
-    </main>
+        </section>
+      </main>
+
+      <ContactFormModal 
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
+    </>
   );
 } 

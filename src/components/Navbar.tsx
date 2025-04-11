@@ -4,11 +4,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
+import ContactFormModal from './ContactFormModal';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const servicesRef = useRef<HTMLLIElement>(null);
   const pathname = usePathname();
 
@@ -115,9 +117,12 @@ const Navbar = () => {
 
           {/* CTA Section */}
           <div>
-            <a className="hidden xl:inline-flex items-center px-6 py-5 border border-transparent text-sm font-medium cta-button text-white bg-black hover:bg-gray-900 tracking-[1px] font-inter" href="/get-started">
+            <button 
+              onClick={() => setIsModalOpen(true)}
+              className="hidden xl:inline-flex items-center px-6 py-5 border border-transparent text-sm font-medium cta-button text-white bg-black hover:bg-gray-900 tracking-[1px] font-inter"
+            >
               REQUEST A QUOTE
-            </a>
+            </button>
             <button 
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="xl:hidden inline-flex items-center justify-center p-2 rounded-md hover:text-gray-600 focus:outline-none text-black"
@@ -183,6 +188,11 @@ const Navbar = () => {
           </div>
         </div>
       )}
+
+      <ContactFormModal 
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </nav>
   );
 };

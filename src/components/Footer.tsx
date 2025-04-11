@@ -1,9 +1,12 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
+import ContactFormModal from './ContactFormModal';
 
 export default function Footer() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <footer className="bg-[#C0B283] min-h-[412px] py-16">
       <div className="mx-auto w-[85vw] xl:w-[1126px]">
@@ -68,7 +71,10 @@ export default function Footer() {
 
           {/* Request Quote Button */}
           <div>
-            <button className="inline-flex items-center px-6 py-5 border border-transparent text-sm font-medium rounded-full text-white bg-black hover:bg-gray-800 tracking-wider uppercase">
+            <button 
+              onClick={() => setIsModalOpen(true)}
+              className="inline-flex items-center px-6 py-5 border border-transparent text-sm font-medium rounded-full text-white bg-black hover:bg-gray-800 tracking-wider uppercase"
+            >
               REQUEST A QUOTE
             </button>
           </div>
@@ -86,6 +92,11 @@ export default function Footer() {
           </div>
         </div>
       </div>
+
+      <ContactFormModal 
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </footer>
   );
 } 
